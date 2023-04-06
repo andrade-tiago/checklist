@@ -1,0 +1,39 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 1em;
+}
+
+.container {
+	width: 100%;
+	padding: 0 10px;
+}
+
+.content {
+	width: 100%;
+	max-width: 650px;
+	margin: 0 auto;
+	background-color: #eee;
+}
+
+#checklist {
+	list-style: none;
+}
+
+.checklist-item {
+	border: 1px dashed orangered;
+	display: flex;
+}
+
+.checklist-item-check {
+	width: min-content;
+	padding: 10px;
+}
+
+.checklist-item-text {
+	padding: 10px;
+	resize: none;
+	width: 100%;
+}
