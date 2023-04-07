@@ -7,6 +7,7 @@
 
 		<title>Checklist</title>
 
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css" />
 		<link rel="stylesheet" href="./css/style.css" />
 
 		<script defer src="./js/main.js"></script>
@@ -14,16 +15,19 @@
 	<body>
 		<div class="container">
 			<div class="content">
+				<form id="edit">
+					<textarea name="text" id="text" class="input"></textarea>
+					<button type="submit" class="btn">Adicionar</button>
+				</form>
+
 				<ul id="checklist">
-					<li class="checklist-item">
-						<div class="checklist-item-check">
-							<input type="checkbox" />
-						</div>
-						<textarea class="checklist-item-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloribus, minima.</textarea>
-					</li>
-					<li class="checklist-item" id="add">
-						<button>+</button>
-					</li>
+					<!-- <li class="checklist-item">
+						<input type="checkbox" class="checklist-item-check" />
+						<span class="checklist-item-text">
+							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, molestiae quisquam modi cumque aliquid iusto animi earum accusamus cum praesentium a aliquam placeat? Ipsam corporis saepe laudantium iure harum quis nostrum? Pariatur consequuntur minima eum expedita ratione tempore assumenda voluptate dolore, temporibus reprehenderit, ad consectetur itaque sequi, nobis maiores sed.
+						</span>
+						<button class="btn bi bi-pencil"></button>
+					</li> -->
 				</ul>
 			</div>
 		</div>

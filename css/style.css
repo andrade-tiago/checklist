@@ -18,6 +18,31 @@
 	background-color: #eee;
 }
 
+#edit {
+	border: 1px solid blue;
+	padding: 10px;
+}
+
+#edit * {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+}
+
+#edit .input {
+	width: 100%;
+	max-width: 400px;
+	resize: none;
+	border: 1px solid #999;
+	border-radius: 5px;
+}
+
+.btn {
+	height: min-content;
+	padding: 5px;
+	cursor: pointer;
+}
+
 #checklist {
 	list-style: none;
 }
@@ -25,15 +50,23 @@
 .checklist-item {
 	border: 1px dashed orangered;
 	display: flex;
+	padding: 10px;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .checklist-item-check {
-	width: min-content;
-	padding: 10px;
+	cursor: pointer;
+}
+
+.checklist-item-check:checked ~ .checklist-item-text {
+	text-decoration: line-through;
+}
+
+.checklist-item * {
+	margin: 0 10px;
 }
 
 .checklist-item-text {
-	padding: 10px;
-	resize: none;
 	width: 100%;
 }
