@@ -1,46 +1,137 @@
+:root {
+	--bg-color-1: #D7D8D9;
+	--bg-color-2: #EEE;
+	--bg-color-3: #FFF;
+	--font-color: #222;
+	--selection: #4A555F77;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-size: 1em;
+	color: var(--font-color);
+}
+
+::selection {
+	background: var(--selection);
+}
+
+body {
+	background: var(--bg-color-1);
+}
+
+body.dark {
+	--bg-color-1: #121212;
+	--bg-color-2: #1F2122;
+	--bg-color-3: #303335;
+	--font-color: #AAA;
+	--selection: #4A555FDD;
 }
 
 .container {
 	width: 100%;
-	padding: 0 10px;
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .content {
 	width: 100%;
-	max-width: 650px;
-	margin: 0 auto;
-	background-color: #eee;
-}
-
-#edit {
-	border: 1px solid blue;
-	padding: 10px;
-}
-
-#edit * {
-	display: block;
-	margin: 0 auto;
-	margin-bottom: 10px;
-}
-
-#edit .input {
-	width: 100%;
-	max-width: 400px;
-	resize: none;
-	border: 1px solid #999;
+	max-width: 550px;
+	margin: 10px 10px;
+	height: min-content;
+	background: var(--bg-color-2);
+	padding: 20px;
 	border-radius: 5px;
 }
 
-.btn {
-	height: min-content;
-	padding: 5px;
+.content * {
+	margin-bottom: 10px;
+	display: block;
+}
+
+.tool {
+	border: 0;
+	font-size: 2rem;
+	padding: 0;
+	margin: 0 10px;
 	cursor: pointer;
+	background: transparent;
+	display: inline-block;
+}
+
+#dark-mode::before {
+	content: '\F494';
+	font-family: 'bootstrap-icons';
+	transition: .2s;
+}
+
+body.dark #dark-mode::before {
+	content: '\F5A1';
+}
+
+#clean::before {
+	content: '\F675';
+	font-family: 'bootstrap-icons';
+}
+
+#sketch {
+	resize: vertical;
+	font-family: 'Courier New', Courier, monospace;
+}
+
+.input {
+	width: 100%;
+	resize: none;
+	border: 1px solid #999;
+	border-radius: 5px;
+	outline: 0;
+	padding: 10px;
+	background-color: var(--bg-color-3);
+	transition: .2s;
+	min-height: 50px;
+}
+
+.blue {
+	--shadow: #555D6055;
+	--bg: #555D60;
+	--hover: #464c4e;
+	--color: #EEE;
+}
+
+/* .gold {
+	--shadow: #F2930555;
+	--bg: #F29305;
+	--hover: #f28305;
+	--color: #222;
+} */
+
+.input:focus {
+	box-shadow: 0 0 0 3px var(--shadow);
+	border-color: var(--bg);
+}
+
+.btn {
+	background: var(--bg);
+	height: min-content;
+	padding: 8px;
+	cursor: pointer;
+	color: var(--color);
+	border: 1px solid transparent;
+	border-radius: 5px;
+	transition: .2s;
+	outline: 0;
+}
+
+.btn:hover {
+	background: var(--hover);
+}
+
+.btn:focus {
+	box-shadow: 0 0 0 3px var(--shadow);
 }
 
 #checklist {
@@ -48,18 +139,35 @@
 }
 
 .checklist-item {
-	border: 1px dashed orangered;
 	display: flex;
-	padding: 10px;
 	align-items: center;
 	justify-content: space-between;
+	background-color: var(--bg-color-2);
+	border-top: 1px dashed #777;
+	padding: 10px 0;
+}
+
+.checklist-item input[type="checkbox"] {
+	display: none;
 }
 
 .checklist-item-check {
 	cursor: pointer;
+	font-size: 1.1rem;
 }
 
-.checklist-item-check:checked ~ .checklist-item-text {
+.checklist-item-check::before {
+	content: '\F26D';
+	font-family: 'bootstrap-icons' !important;
+	transition: .5s;
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-item-check::before {
+	content: '\F26C';
+	color: #D17D00;
+}
+
+.checklist-item input[type="checkbox"]:checked ~ .checklist-item-text {
 	text-decoration: line-through;
 }
 

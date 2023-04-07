@@ -15,20 +15,40 @@
 	<body>
 		<div class="container">
 			<div class="content">
+				<button
+					id="dark-mode"
+					class="tool"
+					title="Modo noturno"
+				></button>
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="content">
+				<h2>Checklist</h2>
+
 				<form id="edit">
-					<textarea name="text" id="text" class="input"></textarea>
-					<button type="submit" class="btn">Adicionar</button>
+					<textarea
+						name="text"
+						id="text"
+						class="input blue"
+						placeholder="Realizar tarefa de matemática..."
+					></textarea>
+					<button type="submit" class="btn blue">Adicionar</button>
 				</form>
 
-				<ul id="checklist">
-					<!-- <li class="checklist-item">
-						<input type="checkbox" class="checklist-item-check" />
-						<span class="checklist-item-text">
-							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa, molestiae quisquam modi cumque aliquid iusto animi earum accusamus cum praesentium a aliquam placeat? Ipsam corporis saepe laudantium iure harum quis nostrum? Pariatur consequuntur minima eum expedita ratione tempore assumenda voluptate dolore, temporibus reprehenderit, ad consectetur itaque sequi, nobis maiores sed.
-						</span>
-						<button class="btn bi bi-pencil"></button>
-					</li> -->
-				</ul>
+				<ul id="checklist"></ul>
+			</div>
+
+			<div class="content">
+				<h2>Rascunho</h2>
+
+				<textarea
+					name="sketch"
+					id="sketch"
+					class="input blue"
+					placeholder="Anotações..."
+				></textarea>
 			</div>
 		</div>
 	</body>
